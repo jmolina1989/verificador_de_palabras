@@ -34,12 +34,12 @@ while (estado){
         salieron.push(random);
     }
 }
-
 document.getElementById("audio").src = palabras[random].audio;
 localStorage.setItem("salieron",JSON.stringify(salieron));
 
 const verificar = () => {
     let input = document.getElementById("input").value;
+    input = input.trim();
     if (input == palabras[random].palabra){
         alert("Excelente!!!...")
         location.reload();
