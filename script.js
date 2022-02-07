@@ -1,19 +1,19 @@
 const palabras = [
-    {palabra:"Actividad",audio:"./Audios/Actividad.mp3" },
-    {palabra:"Adjetivo",audio:"./Audios/Adjetivo.mp3" },
-    {palabra:"Descripción",audio:"./Audios/Descripcion.mp3" },
-    {palabra:"Desinfección",audio:"./Audios/Desinfeccion.mp3" },
-    {palabra:"Ejercicio",audio:"./Audios/Ejercicio.mp3" },
-    {palabra:"Examen",audio:"./Audios/Examen.mp3" },
-    {palabra:"Exámenes",audio:"./Audios/Examenes.mp3" },
-    {palabra:"Guitarra",audio:"./Audios/Guitarra.mp3" },
-    {palabra:"Había",audio:"./Audios/Había.mp3" },
-    {palabra:"Hazañas",audio:"./Audios/Hazañas.mp3" },
-    {palabra:"Iba",audio:"./Audios/Iba.mp3" },
-    {palabra:"Imagen",audio:"./Audios/Imagen.mp3" },
-    {palabra:"Oración",audio:"./Audios/Oración.mp3" },
-    {palabra:"Resumen",audio:"./Audios/Resumen.mp3" },
-    {palabra:"Sustantivo",audio:"./Audios/Sutantivo.mp3" },
+    {palabra:"Actividad",audio:"./Audios/Actividad.m4a" },
+    {palabra:"Adjetivo",audio:"./Audios/Adjetivo.m4a" },
+    {palabra:"Descripción",audio:"./Audios/Descripcion.m4a" },
+    {palabra:"Desinfección",audio:"./Audios/Desinfeccion.m4a" },
+    {palabra:"Ejercicio",audio:"./Audios/Ejercicio.m4a" },
+    {palabra:"Examen",audio:"./Audios/Examen.m4a" },
+    {palabra:"Exámenes",audio:"./Audios/Examenes.m4a" },
+    {palabra:"Guitarra",audio:"./Audios/Guitarra.m4a" },
+    {palabra:"Había",audio:"./Audios/Había.m4a" },
+    {palabra:"Hazañas",audio:"./Audios/Hazañas.m4a" },
+    {palabra:"Iba",audio:"./Audios/Iba.m4a" },
+    {palabra:"Imagen",audio:"./Audios/Imagen.m4a" },
+    {palabra:"Oración",audio:"./Audios/Oración.m4a" },
+    {palabra:"Resumen",audio:"./Audios/Resumen.m4a" },
+    {palabra:"Sustantivo",audio:"./Audios/Sutantivo.m4a" },
 ];
 let salieron = [];
 if (localStorage.getItem("salieron") == null){
@@ -40,7 +40,10 @@ localStorage.setItem("salieron",JSON.stringify(salieron));
 const verificar = () => {
     let input = document.getElementById("input").value;
     input = input.trim();
-    if (input == palabras[random].palabra){
+    input = input.toLowerCase();
+    let palabra = palabras[random].palabra;
+    palabra = palabra.toLowerCase();
+    if (input == palabra){
         alert("Excelente!!!...")
         location.reload();
     }else {
